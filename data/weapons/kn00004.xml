@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn00004" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn00004/kn00004.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="victory22">
+      <attach socket="special_socket01" />
+    </material>
+    <material name="esport09">
+      <attach socket="special_socket01" />
+      <attach socket="special_socket02" />
+    </material>
+    <material name="mastery01" />
+    <material name="rating2210" />
+    <material name="rating2306" />
+    <material name="summer24" />
+    <material name="coil2409" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Switchblade"/>
+  </classes>
+  <skin_content>
+    <item name="kn00004_victory22skin_shop" />
+    <item name="kn00004_esport09skin_shop" />
+    <item name="kn00004_mastery01skin_shop" />
+    <item name="kn00004_rating2210skin_shop" />
+    <item name="kn00004_rating2306skin_shop" />
+    <item name="kn00004_summer24skin_shop" />
+    <item name="kn00004_coil2409skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn00004_shop_name" />
+    <param name="description" value="@ui_weapons_kn00004" />
+    <param name="icon" value="kn00004" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn00004_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn00004" />
+  </content>
+  <icons>
+    <combatlog melee="kn00004_combatLog" />
+    <weaponpanel icon="kn00004_combatLog" />
+  </icons>
+  <skin_content />
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0" name="special_socket01">
+      <support helper="kn00004_saslot01" name="kn00004_victory22_sa01" />
+    </socket>
+    <socket can_be_empty="0" name="special_socket02">
+      <support helper="kn00004_saslot02" name="kn00004_esport09_sa02" />
+    </socket>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

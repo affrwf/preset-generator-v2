@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn18" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn18/kn18.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="set12" />
+    <material name="wf01" />
+    <material name="carbon01" />
+    <material name="bp05" />
+    <material name="xmas04" />
+    <material name="stream01" />
+    <material name="an07" />
+    <material name="vk01" />
+    <material name="black03" />
+    <material name="xmas05" />
+    <material name="usday00002" />
+    <material name="rating05">
+      <attach socket="special_socket01" />
+    </material>
+    <material name="masacre01" />
+    <material name="bones01" />
+    <material name="pulitzer2210" />
+    <material name="esport2211" />
+    <material name="dpass2212_02" />
+    <material name="somalia2308" />
+    <material name="bone2309_02" />
+    <material name="mvt23temp12" />
+    <material name="underground2412" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="M48_Bowie" />
+  </classes>
+  <skin_content>
+    <item name="kn18_wf01skin_shop" />
+    <item name="kn18_carbon01skin_shop" />
+    <item name="kn18_set12skin_shop" />
+    <item name="kn18_bp05skin_shop" />
+    <item name="kn18_xmas04skin_shop" />
+    <item name="kn18_stream01skin_shop" />
+    <item name="kn18_an07skin_shop" />
+    <item name="kn18_vk01skin_shop" />
+    <item name="kn18_black03skin_shop" />
+    <item name="kn18_xmas05skin_shop" />
+    <item name="kn18_usday00002skin_shop" />
+    <item name="kn18_rating05skin_shop" />
+    <item name="kn18_masacre01skin_shop" />
+    <item name="kn18_bones01skin_shop" />
+    <item name="kn18_pulitzer2210skin_shop" />
+    <item name="kn18_esport2211skin_shop" />
+    <item name="kn18_dpass2212_02skin_shop" />
+    <item name="kn18_somalia2308skin_shop" />
+    <item name="kn18_bone2309_02skin_shop" />
+    <item name="kn18_mvt23temp12skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn18_shop_name" />
+    <param name="description" value="@ui_weapons_kn18" />
+    <param name="icon" value="kn18" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn18_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn18" />
+  </content>
+  <icons>
+    <combatlog melee="Kn18_combatLog" />
+    <weaponpanel icon="Kn18_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket can_be_empty="0" name="special_socket01">
+      <support helper="kn18_saslot01" name="kn18_rating05_sa01" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" net_policy="weapon" name="kn54_gold01" priority="3" type="weapon" view_settings="objects/weapons/kn54/kn54.xml">
+  <skins>
+    <material name="gold01" />
+    <material name="obsidian01" />
+    <material name="town01" />
+    <material name="jungle01" />
+    <material name="frontlines01">
+      <attach socket="kn54_frontlines01_sa01" />
+    </material>
+    <material name="inoagent01">
+      <attach socket="kn54_inoagent01_sa01" />
+    </material>
+    <material name="rating08" />
+    <material name="summer22">
+      <attach socket="kn54_summer22_sa01" />
+    </material>
+    <material name="autumn2209_01" />
+    <material name="mastery01" />
+    <material name="esport2210" />
+    <material name="patrick23" />
+    <material name="spring2304" />
+    <material name="deepwater2303" />
+    <material name="summer23_01" />
+    <material name="north2312" />
+    <material name="stval24" />
+    <material name="rating2403" />
+    <material name="newyear23" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Hunting_Knife"/>
+  </classes>
+
+  <skin_content>
+    <item name="kn54_obsidian01skin_shop" />
+    <item name="kn54_town01skin_shop" />
+    <item name="kn54_jungle01skin_shop" />
+    <item name="kn54_frontlines01skin_shop" />
+    <item name="kn54_inoagent01skin_shop" />
+    <item name="kn54_rating08skin_shop" />
+    <item name="kn54_summer22skin_shop" />
+    <item name="kn54_autumn2209_01skin_shop" />
+    <item name="kn54_mastery01skin_shop" />
+    <item name="kn54_esport2210skin_shop" />
+    <item name="kn54_patrick23skin_shop" />
+    <item name="kn54_spring2304skin_shop" />
+    <item name="kn54_deepwater2303skin_shop" />
+    <item name="kn54_summer23_01skin_shop" />
+    <item name="kn54_north2312skin_shop" />
+    <item name="kn54_stval24skin_shop" />
+    <item name="kn54_rating2403skin_shop" />
+    <item name="kn54_newyear23skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn54_gold01_name" />
+    <param name="description" value="@kn54_gold01_desc" />
+    <param name="icon" value="kn54_gold01" />
+    <param name="rarity" value="Elite" />
+    <param name="lore_description" value="@kn54_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn54_gold01" />
+  </content>
+  <icons>
+    <combatlog melee="kn54_gold01_combatLog" />
+    <weaponpanel icon="kn54_gold01_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0" name="kn54_frontlines01_sa01">
+      <support helper="kn54_frontlines01_saslot01" name="kn54_frontlines01_sa01" />
+    </socket>
+    <socket can_be_empty="0" name="kn54_inoagent01_sa01">
+      <support helper="kn54_inoagent01_saslot01" name="kn54_inoagent01_sa01" />
+    </socket>
+    <socket can_be_empty="0" name="kn54_summer22_sa01">
+      <support helper="kn54_summer22_saslot01" name="kn54_summer22_sa01" />
+    </socket>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn60" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn60/kn60.xml">
+
+  <skins>
+    <material name="default" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Karambit"/>
+  </classes>
+  <skin_content>
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn60_name" />
+    <param name="description" value="@kn60_desc" />
+    <param name="icon" value="ccs_nonitem" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn60_lore_desc" />
+  </UI_stats>
+  <unique_properties>
+    <param name="animation" />
+	<param name="effect" />
+	<param name="trick" />
+  </unique_properties>
+  <content>
+    <item name="kn60" />
+  </content>
+  <icons>
+    <combatlog melee="kn60_combatLog" />
+    <weaponpanel icon="kn60_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml">
+    <param name="melee_can_play_trick" value="1"/>
+	<!--старт сиквенс-->
+	<param name="melee_can_play_start_sequence" value="1"/>
+	<param name="melee_start_sequence_animations_count" value="3"/>
+	<param name="melee_start_sequence_cooldown_ms" value="5000"/>
+	<param name="melee_start_sequence_wait_time_ms" value="200"/>
+  </settings>
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+</item>

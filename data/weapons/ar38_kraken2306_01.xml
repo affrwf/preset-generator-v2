@@ -1,0 +1,227 @@
+<?xml version="1.0" ?>
+<item category="heavy" class="K01_Item" name="ar38_kraken2306_01" net_policy="weapon" priority="49" view_settings="objects/weapons/ar38/ar38.xml">
+    <tags>
+        <tag name="ar"/>
+    </tags>
+    <skins>
+        <material name="kraken2306_01"/>
+    </skins>
+    <icons>
+        <ui_icon name="ar38"/>
+        <combatlog icon="Ar38_combatLog" melee="Melee"/>
+    </icons>
+    <drop_params>
+        <item name="ar38_kraken2306_01" type="weapon"/>
+    </drop_params>
+    <settings archetype="Items/Weapons/Archetypes/AR_38.xml">
+        <param name="ammo_amount" value="35"/>
+        <param name="rpm" value="735"/>
+        <param name="damage" value="95"/>
+        <param name="damage_min" value="76"/>
+        <param name="damage_mul" value="1"/>
+        <param name="damage_drop_per_meter" value="1.2"/>
+        <param name="damage_drop_min_distance" value="18"/>
+        <param name="melee_damage" value="65"/>
+        <param name="melee_range" value="1.3"/>
+        <param name="melee_radius" value="0.5"/>
+        <param name="recoil_max" value="700"/>
+        <param name="recoil_att" value="100"/>
+        <param name="recoil_att_mul" value="1">
+            <stance name="stand" value="1"/>
+            <stance name="crouch" value="0.8"/>
+            <stance name="prone" value="0.65"/>
+            <stance name="run" value="1.1"/>
+            <stance name="haste" value="1"/>
+            <stance name="jump" value="1"/>
+            <stance name="zoomed_stand" value="1"/>
+            <stance name="zoomed_crouch" value="0.8"/>
+            <stance name="zoomed_prone" value="0.65"/>
+            <stance name="zoomed_walk" value="1"/>
+            <stance name="zoomed_jump" value="1"/>
+        </param>
+        <param name="recoil_dec" value="90"/>
+        <param name="recoil_dec_mul" value="1"/>
+        <param name="recoil_dec_delay" value="55"/>
+        <param name="recoil_rnd" value="0"/>
+        <param name="recoil_smth" value="35"/>
+        <param name="recoil_smth_mul" value="1"/>
+        <param name="spread_min" value="2.8"/>
+        <param name="spread_min_mul" value="1">
+            <stance name="stand" value="1"/>
+            <stance name="crouch" value="0.9"/>
+            <stance name="prone" value="0.77"/>
+            <stance name="slide" value="0.77"/>
+            <stance name="run" value="1.3"/>
+            <stance name="haste" value="5"/>
+            <stance name="jump" value="5"/>
+            <stance name="zoomed_stand" value="0.05"/>
+            <stance name="zoomed_crouch" value="0.05"/>
+            <stance name="zoomed_prone" value="0.05"/>
+            <stance name="zoomed_walk" value="0.05"/>
+            <stance name="zoomed_slide" value="0.05"/>
+            <stance name="zoomed_jump" value="0.75"/>
+        </param>
+        <param name="spread_max" value="9.2"/>
+        <param name="spread_max_mul" value="1">
+            <stance name="stand" value="1"/>
+            <stance name="crouch" value="0.8"/>
+            <stance name="prone" value="0.77"/>
+            <stance name="run" value="1.2"/>
+            <stance name="haste" value="1.3"/>
+            <stance name="jump" value="1.4"/>
+            <stance name="zoomed_stand" value="0.05"/>
+            <stance name="zoomed_crouch" value="0.05"/>
+            <stance name="zoomed_prone" value="0.05"/>
+            <stance name="zoomed_walk" value="0.05"/>
+            <stance name="zoomed_slide" value="0.05"/>
+            <stance name="zoomed_jump" value="0.4"/>
+        </param>
+        <param name="spread_att" value="3"/>
+        <param name="spread_att_mul" value="1"/>
+        <param name="spread_dec" value="30"/>
+        <param name="spread_dec_mul" value="1"/>
+        <param name="spread_dec_delay" value="80"/>
+        <param name="sway_dec" value="1">
+            <stance name="zoomed_stand" value="0.5"/>
+            <stance name="zoomed_crouch" value="0.5"/>
+            <stance name="zoomed_prone" value="0.5"/>
+            <stance name="zoomed_walk" value="0.5"/>
+            <stance name="zoomed_jump" value="0.5"/>
+            <stance name="zoomed_slide" value="0.5"/>
+        </param>
+        <param name="sway_dec_mul" value="1">
+            <stance name="zoomed_stand" value="0.25"/>
+            <stance name="zoomed_crouch" value="0.25"/>
+            <stance name="zoomed_prone" value="0.25"/>
+            <stance name="zoomed_walk" value="0.25"/>
+            <stance name="zoomed_jump" value="0.25"/>
+            <stance name="zoomed_slide" value="0.25"/>
+        </param>
+        <param name="sway_speed_mult" value="0.1">
+            <stance name="zoomed_stand" value="0.7"/>
+            <stance name="zoomed_crouch" value="0.7"/>
+            <stance name="zoomed_prone" value="0.7"/>
+            <stance name="zoomed_slide" value="0.7"/>
+            <stance name="zoomed_walk" value="1"/>
+            <stance name="zoomed_jump" value="2.5"/>
+        </param>
+        <param name="sway_mul" value="0">
+            <stance name="zoomed_stand" value="0.2"/>
+            <stance name="zoomed_crouch" value="0.2"/>
+            <stance name="zoomed_prone" value="0.1"/>
+            <stance name="zoomed_walk" value="0.4"/>
+            <stance name="zoomed_jump" value="5"/>
+            <stance name="zoomed_slide" value="0.1"/>
+        </param>
+        <param name="sway_min_x" value="0.025"/>
+        <param name="sway_min_y" value="0.035"/>
+        <param name="fov_mul" value="1">
+            <stance name="zoomed_stand" value="0.7"/>
+            <stance name="zoomed_crouch" value="0.7"/>
+            <stance name="zoomed_prone" value="0.7"/>
+            <stance name="zoomed_walk" value="0.7"/>
+            <stance name="zoomed_jump" value="0.7"/>
+            <stance name="zoomed_slide" value="0.7"/>
+        </param>
+        <param name="melee_knock_back_chance" value="1"/>
+        <param name="knock_back_chance" value="0"/>
+        <param name="reload_duration" value="2250"/>
+        <param name="zoom_factor" value="1.1"/>
+        <param name="melee_duration" value="380"/>
+        <param name="melee_out_duration" value="400"/>
+        <param name="select_duration" value="300"/>
+        <param name="deselect_duration" value="300"/>
+        <param name="holster_in_duration" value="180"/>
+        <param name="bayonet_melee_duration" value="500"/>
+        <param name="bayonet_melee_out_duration" value="600"/>
+        <param name="zoom_in_duration" value="130"/>
+        <param name="zoom_out_duration" value="150"/>
+        <param name="ai_sound_radius" value="250"/>
+        <param name="ai_light_radius" value="2.5"/>
+    </settings>
+    <firemodes>
+        <firemode icon="FireModeRapid" type="Rapid"/>
+    </firemodes>
+    <melee_params>
+        <param name="impulse" value="20"/>
+        <param name="pierce" value="10"/>
+        <param name="no_ray_test" value="1"/>
+    </melee_params>
+    <sockets>
+        <socket can_be_empty="0" name="mount" ui_helper="ui_mount">
+            <support helper="mount" name="mount01"/>
+        </socket>
+        <socket can_be_empty="1" name="charm" ui_helper="ui_charm">
+            <support helper="charm" name="charm"/>
+        </socket>
+        <socket can_be_empty="0" name="scope" ui_helper="ui_scope">
+            <support helper="top_small" name="ar38_rds_d"/>
+            <support helper="top_small" name="as02"/>
+            <support helper="top_small" name="as01"/>
+            <support helper="top_small" name="as04"/>
+            <support helper="top_small" name="rds01"/>
+            <support helper="top_small" name="rds07"/>
+            <support helper="top_small" name="rds02"/>
+        </socket>
+        <socket can_be_empty="0" name="underbarrel" ui_helper="ui_underbarrel">
+            <support helper="underbarrel_small" name="ar38_gp02_d"/>
+            <support helper="underbarrel_middle" name="ar38_gp01_d"/>
+        </socket>
+        <socket can_be_empty="0" name="muzzle" ui_helper="ui_muzzle">
+            <support helper="suppressor" name="ar38_sp_d"/>
+            <support helper="silencer" name="ar38_sc_d"/>
+        </socket>
+        <socket can_be_empty="1" name="effects">
+            <support helper="muzzle_flash_effect" name="muzzle_flash_effect"/>
+            <support helper="muzzle_flash_light" name="muzzle_flash_light"/>
+        </socket>
+        <socket name="perk_a" can_be_empty="1">
+            <support helper="perk_a" name="perk_a"/>
+        </socket>
+        <socket name="perk_b" can_be_empty="1">
+            <support helper="perk_b" name="perk_b"/>
+        </socket>
+        <socket name="perk_c" can_be_empty="1">
+            <support helper="perk_c" name="perk_c"/>
+        </socket>
+    </sockets>
+    <fireparams>
+        <fire>
+            <param name="extra_ammo" value="175"/>
+            <param name="ammo_type" value="bullet_ar"/>
+            <param name="bullet_chamber" value="1"/>
+            <param name="helper_tp" value="weapon_term"/>
+            <param name="helper_fp" value="weapon_term"/>
+            <param name="nearmiss_signal" value="OnNearMiss"/>
+        </fire>
+        <recoil>
+            <param name="recoil_reset_delay" value="250"/>
+            <hints>
+                <hint x="-0.01" y="0.08"/>
+                <hint x="-0.012" y="0.09"/>
+                <hint x="0.015" y="0.10"/>
+                <hint x="-0.018" y="0.12"/>
+                <hint x="-0.020" y="0.13"/>
+                <hint x="0.025" y="0.15"/>
+                <hint x="-0.022" y="0.14"/>
+                <hint x="0.026" y="0.16"/>
+                <hint x="-0.025" y="0.17"/>
+                <hint x="0.027" y="0.16"/>
+                <hint x="-0.028" y="0.15"/>
+                <hint x="0.030" y="0.12"/>
+                <hint x="0.01" y="0.14"/>
+                <hint x="0.012" y="0.09"/>
+                <hint x="-0.015" y="0.10"/>
+                <hint x="-0.018" y="0.12"/>
+                <hint x="0.020" y="0.13"/>
+                <hint x="-0.025" y="0.12"/>
+                <hint x="0.022" y="0.14"/>
+                <hint x="-0.026" y="0.16"/>
+                <hint x="0.025" y="0.17"/>
+                <hint x="-0.027" y="0.13"/>
+                <hint x="0.028" y="0.15"/>
+                <hint x="-0.030" y="0.12"/>
+            </hints>
+        </recoil>
+    </fireparams>
+</item>

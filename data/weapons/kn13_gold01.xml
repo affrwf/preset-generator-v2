@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn13_gold01" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn13/kn13.xml">
+  <tags>
+    <tag name="melee" />
+    <tag name="gold" />
+  </tags>
+  <skins>
+    <material name="gold01" />
+    <material name="zsd01" />
+    <material name="zsd02" />
+    <material name="oc02" />
+    <material name="rad01" />
+    <material name="jp01" />
+    <material name="lava01" />
+    <material name="friday" />
+    <material name="samurai02" />
+    <material name="hlw01" />
+    <material name="esport2203" />
+    <material name="kraken2306_01" />
+    <material name="esport2308" />
+    <material name="rating2309" />
+    <material name="inx24spring04" />
+		<material name="mvt24humourist02" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Katana"/>
+  </classes>
+
+  <UI_stats>
+    <param name="name" value="@kn13_gold01_shop_name" />
+    <param name="description" value="@ui_weapons_kn13_gold01" />
+    <param name="icon" value="weapons_kn13_gold01" />
+    <param name="rarity" value="Elite" />
+    <param name="lore_description" value="@kn13_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn13_gold01" />
+  </content>
+  <skin_content>
+    <item name="kn13_zsd01skin_shop" />
+    <item name="kn13_zsd02skin_shop" />
+    <item name="kn13_oc02_shop" />
+    <item name="kn13_rad01skin_shop" />
+    <item name="kn13_jp01skin_shop" />
+    <item name="kn13_lava01skin_shop" />
+    <item name="kn13_friday01skin_shop" />
+    <item name="kn13_samurai02skin_shop" />
+    <item name="kn13_hlw01skin_shop" />
+    <item name="kn13_esport2203skin_shop" />
+    <item name="kn13_kraken2306_01skin_shop" />
+    <item name="kn13_esport2308skin_shop" />
+    <item name="kn13_rating2309skin_shop" />
+    <item name="kn13_inx24spring04skin_shop" />
+		<item name="kn13_mvt24humourist02skin_shop" />
+  </skin_content>
+  <icons>
+    <combatlog melee="CombatLogIcons_kn13_gold01" />
+    <weaponpanel icon="CombatLogIcons_kn13_gold01" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+    <param name="aoe_enabled" value="0" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+    <param name="aoe_enabled" value="0" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

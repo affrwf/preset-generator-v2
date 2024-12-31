@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<item category="small" class="K01_Item" name="kn05_zsd03_powerup_zomb" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn05/kn05.xml">
+	<skins>
+		<material name="zsd03" />
+	</skins>
+	<tags>
+        <tag name="kn05_zsd03_powerup_zomb"/>
+    </tags>
+	<mmo_stats>
+		<param name="item_category" value="Melee" />
+		<param name="shopcontent" value="1" />
+		<param name="classes" value="SRME" />
+	</mmo_stats>
+	<UI_stats>
+		<param name="name" value="@kn05_zsd03_powerup_shop_name" />
+		<param name="description" value="@ui_weapons_kn05_zsd03" />
+		<param name="icon" value="kn05_zsd03" />
+		<param name="rarity" value="Ultra_rare" />
+		<param name="lore_description" value="@kn05_lore_desc" />
+	</UI_stats>
+	<content>
+		<item name="kn05_zsd03_powerup_zomb" />
+	</content>
+	<icons>
+		<combatlog melee="Kn05_combatLog" />
+		<weaponpanel icon="Kn05_combatLog" />
+	</icons>
+	<settings>
+		<param name="melee_damage" value="1280"/>
+		<param name="melee_range" value="1.6"/>
+		<param name="melee_radius" value="0.5"/>
+		<param name="secondary_melee_damage" value="1750"/>
+		<param name="secondary_melee_range" value="2"/>
+		<param name="secondary_melee_radius" value="0.5"/>
+		<param name="select_duration" value="100"/>
+		<param name="deselect_duration" value="200"/>
+		<param name="melee_duration" value="380"/>
+		<param name="melee_out_duration" value="180"/>
+		<param name="secondary_melee_duration" value="700"/>
+		<param name="secondary_melee_out_duration" value="400"/>
+		<param name="toss_duration" value="220"/>
+		<param name="holster_in_duration" value="200"/>
+		<param name="spread_min" value="6"/>
+		<param name="spread_max" value="6"/>
+        <param name="melee_damage_backstab_mul" value="2.2"/>
+        <param name="secondary_melee_damage_backstab_mul" value="1"/>
+        <param name="melee_max_backstab_angle" value="45"/> 
+	</settings>
+	<firemodes>
+		<firemode icon="FireModeMelee" type="Melee" />
+	</firemodes>
+	<melee_params>
+		<param name="impulse" value="60" />
+		<param name="aoe_enabled" value="0" />
+	</melee_params>
+	<secondary_melee_params>
+		<param name="impulse" value="100" />
+		<param name="aoe_enabled" value="0" />
+		<param name="hit_type" value="melee_secondary" />
+	</secondary_melee_params>
+	<sockets>
+		<socket can_be_empty="0">
+			<support helper="top_small" name="top_small" />
+			<support helper="top_large" name="top_large" />
+		</socket>
+		<socket>
+			<support helper="bottom" name="bottom" />
+		</socket>
+	</sockets>
+</item>

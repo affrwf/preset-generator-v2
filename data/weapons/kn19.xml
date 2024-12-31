@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn19" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn19/kn19.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="nord01" />
+    <material name="bronze01" />
+    <material name="black01" />
+    <material name="warf01" />
+    <material name="blackwd01" />
+    <material name="blue01" />
+    <material name="mulcol01" />
+    <material name="red01" />
+    <material name="jp01" />
+    <material name="bp06" />
+    <material name="oc04" />
+    <material name="camo08" />
+    <material name="hlw02" />
+    <material name="samurai01" />
+    <material name="stream03" />
+    <material name="brazil01" />
+    <material name="swarm03" />
+    <material name="ruby00001">
+      <attach socket="kn19_ruby00001_sa01" />
+    </material>
+    <material name="coldwar01" />
+    <material name="snowstorm01" />
+    <material name="bone01" />
+    <material name="esport2203" />
+    <material name="alligator2207" />
+    <material name="mastery01" />
+    <material name="paint01" />
+    <material name="fire01" />
+    <material name="esport2212" />
+    <material name="esport2309" />
+    <material name="boar2310" />
+    <material name="alps2401" />
+    <material name="biohazard2403" />
+    <material name="pollution2403" />
+    <material name="bandarlog2406" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Balisong_Knife"/>
+  </classes>
+  <skin_content>
+    <item name="kn19_black01skin_shop" />
+    <item name="kn19_blackwd01skin_shop" />
+    <item name="kn19_blue01skin_shop" />
+    <item name="kn19_bronze01skin_shop" />
+    <item name="kn19_purple01skin_shop" />
+    <item name="kn19_nord01skin_shop" />
+    <item name="kn19_red01skin_shop" />
+    <item name="kn19_warf01skin_shop" />
+    <item name="kn19_jp01skin_shop" />
+    <item name="kn19_bp06skin_shop" />
+    <item name="kn19_oc04skin_shop" />
+    <item name="kn19_camo08skin_shop" />
+    <item name="kn19_hlw02skin_shop" />
+    <item name="kn19_samurai01skin_shop" />
+    <item name="kn19_stream03skin_shop" />
+    <item name="kn19_brazil01skin_shop" />
+    <item name="kn19_swarm03skin_shop" />
+    <item name="kn19_ruby00001skin_shop" />
+    <item name="kn19_coldwar01skin_shop" />
+    <item name="kn19_snowstorm01skin_shop" />
+    <item name="kn19_bone01skin_shop" />
+    <item name="kn19_esport2203skin_shop" />
+    <item name="kn19_alligator2207skin_shop" />
+    <item name="kn19_mastery01skin_shop" />
+    <item name="kn19_paint01skin_shop" />
+    <item name="kn19_fire01skin_shop" />
+    <item name="kn19_esport2212skin_shop" />
+    <item name="kn19_esport2309skin_shop" />
+    <item name="kn19_boar2310skin_shop" />
+    <item name="kn19_alps2401skin_shop" />
+    <item name="kn19_biohazard2403skin_shop" />
+    <item name="kn19_pollution2403skin_shop" />
+    <item name="kn19_bandarlog2406skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn19_shop_name" />
+    <param name="description" value="@ui_weapons_kn19" />
+    <param name="icon" value="kn19" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn19_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn19" />
+  </content>
+  <icons>
+    <combatlog melee="Kn19_combatLog" />
+    <weaponpanel icon="Kn19_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+    <socket can_be_empty="0" name="kn19_ruby00001_sa01">
+      <support helper="kn19_ruby00001_sa01" name="kn19_ruby00001_sa01" />
+    </socket>
+  </sockets>
+</item>

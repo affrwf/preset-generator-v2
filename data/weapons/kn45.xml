@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn45" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn45/kn45.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="bronze01" />
+    <material name="lava01" />
+    <material name="mrgtrn" />
+    <material name="heist03" />
+    <material name="dragon01" />
+    <material name="secret00001" />
+    <material name="crow01_console" />
+    <material name="obsidian01" />
+    <material name="royal01" />
+    <material name="frontlines02" />
+    <material name="anniversary01" />
+    <material name="esport2207" />
+    <material name="mountain2208">
+      <attach socket="kn45_mountain2208_sa01" />
+    </material>
+    <material name="mastery01" />
+    <material name="friday2211" />
+    <material name="rust01" />
+    <material name="yellow01" />
+    <material name="beastg001" />
+    <material name="rating2301" />
+    <material name="bikerclub2302" />
+    <material name="esport2304" />
+    <material name="viper2307" />
+    <material name="midgard2309" />
+    <material name="mvt23hidalgo10" />
+    <material name="wolf2311" />
+    <material name="winter2402_01" />
+    <material name="mvt23esport12" />
+    <material name="ferret2403" />
+    <material name="comodo2406" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Karambit"/>
+  </classes>
+  <skin_content>
+    <item name="kn45_bronze01skin_shop" />
+    <item name="kn45_lava01skin_shop" />
+    <item name="kn45_mrgtrnskin_shop" />
+    <item name="kn45_heist03skin_shop" />
+    <item name="kn45_dragon01skin_shop" />
+    <item name="kn45_secret00001skin_shop" />
+    <item name="kn45_crow01skin_console_shop" />
+    <item name="kn45_obsidian01skin_shop" />
+    <item name="kn45_royal01skin_shop" />
+    <item name="kn45_frontlines02skin_shop" />
+    <item name="kn45_anniversary01skin_shop" />
+    <item name="kn45_esport2207skin_shop" />
+    <item name="kn45_mountain2208skin_shop" />
+    <item name="kn45_mastery01skin_shop" />
+    <item name="kn45_friday2211skin_shop" />
+    <item name="kn45_rust01skin_shop" />
+    <item name="kn45_yellow01skin_shop" />
+    <item name="kn45_beastg001skin_shop" />
+    <item name="kn45_rating2301skin_shop" />
+    <item name="kn45_bikerclub2302skin_shop" />
+    <item name="kn45_esport2304skin_shop" />
+    <item name="kn45_viper2307skin_shop" />
+    <item name="kn45_midgard2309skin_shop" />
+    <item name="kn45_mvt23hidalgo10skin_shop" />
+    <item name="kn45_wolf2311skin_shop" />
+    <item name="kn45_winter2402_01skin_shop" />
+    <item name="kn45_mvt23esport12skin_shop" />
+    <item name="kn45_ferret2403skin_shop" />
+    <item name="kn45_comodo2406skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn45_shop_name" />
+    <param name="description" value="@ui_weapons_kn45" />
+    <param name="icon" value="kn45" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn45_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn45" />
+  </content>
+  <icons>
+    <combatlog melee="kn45_combatLog" />
+    <weaponpanel icon="kn45_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket can_be_empty="0" name="kn45_mountain2208_sa01">
+      <support helper="kn45_mountain2208_saslot01" name="kn45_mountain2208_sa01" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

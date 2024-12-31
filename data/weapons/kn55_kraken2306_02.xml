@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<item category="small" class="K01_Item" net_policy="weapon" name="kn55_kraken2306_02" priority="3" type="weapon" view_settings="objects/weapons/kn55/kn55.xml">
+	<skins>
+		<material name="kraken2306_02">
+			<attach socket="kn55_kraken2306_02_sa01" />
+			<attach socket="kn55_kraken2306_02_sa02" />
+		</material>
+	</skins>
+	<mmo_stats>
+		<param name="item_category" value="Melee" />
+		<param name="shopcontent" value="1" />
+		<param name="classes" value="SRME" />
+	</mmo_stats>
+  <classes>
+    <class type="melee" name="Push_Daggers"/>
+  </classes>
+
+	<UI_stats>
+		<param name="name" value="@kn55_kraken2306_02_name" />
+		<param name="description" value="@kn55_kraken2306_02_desc" />
+		<param name="icon" value="kn55_kraken2306_02" />
+		<param name="rarity" value="Legendary" />
+		<param name="lore_description" value="@kn55_lore_desc" />
+	</UI_stats>
+	<unique_properties>
+		<param name="animation" />
+	</unique_properties>
+	<content>
+		<item name="kn55_kraken2306_02" />
+	</content>
+	<icons>
+		<combatlog melee="kn55_combatLog" />
+		<weaponpanel icon="kn55_combatLog" />
+	</icons>
+	<settings archetype="Items/Weapons/Archetypes/KN.xml" />
+	<firemodes>
+		<firemode icon="FireModeMelee" type="Melee" />
+	</firemodes>
+	<melee_params>
+		<param name="impulse" value="60" />
+	</melee_params>
+	<secondary_melee_params>
+		<param name="impulse" value="100" />
+		<param name="hit_type" value="melee_secondary" />
+	</secondary_melee_params>
+	<sockets>
+		<socket can_be_empty="0">
+			<support helper="top_small" name="top_small" />
+			<support helper="top_large" name="top_large" />
+		</socket>
+		<socket>
+			<support helper="bottom" name="bottom" />
+		</socket>
+		<socket can_be_empty="0" name="kn55_kraken2306_02_sa01">
+			<support helper="kn55_kraken2306_02_saslot01" name="kn55_kraken2306_02_sa01" />
+		</socket>
+		<socket can_be_empty="0" name="kn55_kraken2306_02_sa02">
+			<support helper="kn55_kraken2306_02_saslot02" name="kn55_kraken2306_02_sa02" />
+		</socket>
+	</sockets>
+</item>

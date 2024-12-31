@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn49_chrome_console" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn49_console/kn49_chrome_console.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="glo01_console" />
+    <material name="neon01_console" />
+    <material name="paint01_console" />
+    <material name="spunch01_console" />
+    <material name="wolf01_console" />
+    <material name="torch01_console" />
+    <material name="vex01_console" />
+    <material name="patrick01" />
+    <material name="rating2303" />
+    <material name="mvt24stval02" />
+    <material name="biohazard2403" />
+    <material name="patrick24" />
+    <material name="rating2406" />
+    <material name="inx24usday" />
+    <material name="inx24queen11" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+     <classes>
+		<class type="melee" name="Bat"/>
+    </classes>
+  <skin_content>
+    <item name="kn49_glo01skin_console_shop" />
+    <item name="kn49_neon01skin_console_shop" />
+    <item name="kn49_paint01skin_console_shop" />
+    <item name="kn49_spunch01skin_console_shop" />
+    <item name="kn49_wolf01skin_console_shop" />
+    <item name="kn49_torch01skin_console_shop" />
+    <item name="kn49_vex01skin_console_shop" />
+    <item name="kn49_patrick01skin_shop" />
+    <item name="kn49_rating2303skin_shop" />
+    <item name="kn49_mvt24stval02skin_shop" />
+    <item name="kn49_biohazard2403skin_shop" />
+    <item name="kn49_patrick24skin_shop" />
+    <item name="kn49_rating2406skin_shop" />
+    <item name="kn49_inx24usdayskin_shop" />
+    <item name="kn49_inx24queen11skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn49_chrome_console_shop_name" />
+    <param name="description" value="@ui_weapons_kn49_chrome_console" />
+    <param name="icon" value="kn49_chrome_console" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn49_lore_desc" />
+  </UI_stats>
+	<unique_properties>
+		<param name="animation" />
+	</unique_properties>
+  <content>
+    <item name="kn49_chrome_console" />
+  </content>
+  <icons>
+    <combatlog melee="kn49_console_combatLog" />
+    <weaponpanel icon="kn49_console_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

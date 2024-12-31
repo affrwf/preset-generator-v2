@@ -1,0 +1,46 @@
+<?xml version="1.0" ?>
+<item category="small" class="K01_Item" name="kn00002_newyear01" priority="3" type="weapon" view_settings="objects/weapons/kn00002/kn00002.xml" net_policy="weapon">
+	<skins>
+		<material name="newyear01" />
+	</skins>
+	<mmo_stats>
+		<param name="item_category" value="Melee" />
+		<param name="shopcontent" value="1" />
+		<param name="classes" value="SRME" />
+	</mmo_stats>
+  <classes>
+    <class type="melee" name="Kunai"/>
+  </classes>
+
+	<UI_stats>
+		<param name="name" value="@kn00002_newyear01_name" />
+		<param name="description" value="@ui_weapons_kn00002_newyear01" />
+		<param name="icon" value="kn00002_newyear01" />
+		<param name="rarity" value="Legendary" />
+		<param name="lore_description" value="@kn00002_lore_desc" />
+	</UI_stats>
+	<icons>
+		<combatlog melee="kn00002_combatLog" />
+		<weaponpanel icon="kn00002_combatLog" />
+	</icons>
+	<settings archetype="Items/Weapons/Archetypes/KN.xml" />
+	<firemodes>
+		<firemode icon="FireModeMelee" type="Melee" />
+	</firemodes>
+	<melee_params>
+		<param name="impulse" value="60" />
+	</melee_params>
+	<secondary_melee_params>
+		<param name="impulse" value="100" />
+		<param name="hit_type" value="melee_secondary" />
+	</secondary_melee_params>
+	<sockets>
+		<socket can_be_empty="0">
+			<support helper="top_small" name="top_small" />
+			<support helper="top_large" name="top_large" />
+		</socket>
+		<socket>
+			<support helper="bottom" name="bottom" />
+		</socket>
+	</sockets>
+</item>

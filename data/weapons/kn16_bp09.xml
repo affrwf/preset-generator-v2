@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<item category="small" class="K01_Item" name="kn16_bp09" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn16/kn16.xml">
+	<tags>
+		<tag name="melee" />
+	</tags>
+	<skins>
+		<material name="bp09" />
+	</skins>
+	<mmo_stats>
+		<param name="item_category" value="Melee" />
+		<param name="shopcontent" value="1" />
+		<param name="classes" value="SRME" />
+	</mmo_stats>
+  <classes>
+    <class type="melee" name="Tactical_Axe"/>
+  </classes>
+
+	<UI_stats>
+		<param name="name" value="@kn16_bp09_shop_name" />
+		<param name="description" value="@ui_weapons_kn16_bp09" />
+		<param name="icon" value="kn16_bp09" />
+		<param name="rarity" value="Legendary" />
+		<param name="lore_description" value="@kn16_lore_desc" />
+	</UI_stats>
+	<content>
+		<item name="kn16_bp09" />
+	</content>
+	<icons>
+		<combatlog melee="Kn16_combatLog" />
+		<weaponpanel icon="Kn16_combatLog" />
+	</icons>
+	<settings archetype="Items/Weapons/Archetypes/KN.xml" />
+	<firemodes>
+		<firemode icon="FireModeMelee" type="Melee" />
+	</firemodes>
+	<melee_params>
+		<param name="impulse" value="60" />
+	</melee_params>
+	<secondary_melee_params>
+		<param name="impulse" value="100" />
+		<param name="hit_type" value="melee_secondary" />
+	</secondary_melee_params>
+	<sockets>
+		<socket can_be_empty="0">
+			<support helper="top_small" name="top_small" />
+			<support helper="top_large" name="top_large" />
+		</socket>
+		<socket>
+			<support helper="bottom" name="bottom" />
+		</socket>
+	</sockets>
+</item>

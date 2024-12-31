@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn22" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn22/kn22.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="default" />
+    <material name="s10" />
+    <material name="s11" />
+    <material name="s12" />
+    <material name="s13" />
+    <material name="s14" />
+    <material name="s15" />
+    <material name="s16" />
+    <material name="hlw03" />
+    <material name="swarm02" />
+    <material name="rank09" />
+    <material name="xmas06" />
+    <material name="heist02" />
+    <material name="an09" />
+    <material name="rank10" />
+    <material name="fireguitar00001" />
+    <material name="aztec01" />
+    <material name="navy00001" />
+    <material name="autumn01" />
+    <material name="stval01" />
+    <material name="esport2203" />
+    <material name="rating06" />
+    <material name="holo01" />
+    <material name="esport2208">
+      <attach socket="special_socket01" />
+    </material>
+    <material name="mastery01" />
+    <material name="hlw23_02" />
+    <material name="howl2312" />
+    <material name="reptile2406" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="HX_Outdoors_Trident"/>
+  </classes>
+  <skin_content>
+    <item name="kn22_s10skin_shop" />
+    <item name="kn22_s11skin_shop" />
+    <item name="kn22_s12skin_shop" />
+    <item name="kn22_s13skin_shop" />
+    <item name="kn22_s14skin_shop" />
+    <item name="kn22_s15skin_shop" />
+    <item name="kn22_s16skin_shop" />
+    <item name="kn22_hlw03skin_shop" />
+    <item name="kn22_swarm02skin_shop" />
+    <item name="kn22_rank09skin_shop" />
+    <item name="kn22_xmas06skin_shop" />
+    <item name="kn22_heist02skin_shop" />
+    <item name="kn22_an09skin_shop" />
+    <item name="kn22_rank10skin_shop" />
+    <item name="kn22_fireguitar00001skin_shop" />
+    <item name="kn22_aztec01skin_shop" />
+    <item name="kn22_navy00001skin_shop" />
+    <item name="kn22_autumn01skin_shop" />
+    <item name="kn22_stval01skin_shop" />
+    <item name="kn22_esport2203skin_shop" />
+    <item name="kn22_rating06skin_shop" />
+    <item name="kn22_holo01skin_shop" />
+    <item name="kn22_esport2208skin_shop" />
+    <item name="kn22_mastery01skin_shop" />
+    <item name="kn22_hlw23_02skin_shop" />
+    <item name="kn22_howl2312skin_shop" />
+    <item name="kn22_reptile2406skin_shop" />
+  </skin_content>
+  <UI_stats>
+    <param name="name" value="@kn22_shop_name" />
+    <param name="description" value="@ui_weapons_kn22" />
+    <param name="icon" value="kn22" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn22_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn22" />
+  </content>
+  <icons>
+    <combatlog melee="kn22_combatLog" />
+    <weaponpanel icon="kn22_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+    <socket can_be_empty="0" name="special_socket01">
+      <support helper="kn22_saslot01" name="kn22_esport2208_sa01" />
+    </socket>
+  </sockets>
+</item>

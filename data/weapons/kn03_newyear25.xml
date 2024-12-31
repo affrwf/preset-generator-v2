@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn03_newyear25" priority="3" type="weapon" view_settings="objects/weapons/kn03/kn03.xml" net_policy="weapon">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="price" value="1000" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Black_Hawk" />
+  </classes>
+  <UI_stats>
+    <param name="name" value="@kn03_newyear25_name" />
+    <param name="description" value="@kn03_newyear25_desc" />
+    <param name="icon" value="kn03_newyear25" />
+    <param name="rarity" value="Ultra_rare" />
+    <param name="lore_description" value="@kn03_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn03_newyear25" />
+  </content>
+  <icons>
+	<combatlog melee="Kn03_xmas_combatLog" />
+	<weaponpanel icon="Kn03_xmas_combatLog" />
+  </icons>
+  <skins>
+    <material name="newyear25" />
+  </skins>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

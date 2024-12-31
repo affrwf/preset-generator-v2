@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<item category="explosive" class="K01_Item" name="sg01_default" priority="3" view_settings="objects/weapons/Grenades/sg01_default/sg01_default.xml">
+  <icons>
+    <ui_icon name="sg01" />
+    <combatlog icon="Sg01_combatLog" melee="Melee" />
+  </icons>
+  <skins>
+    <material name="smokegrenade_bra01_skin" />
+    <material name="smokegrenade_gold01_skin" />
+    <material name="smokegrenade_hlw01_skin" />
+    <material name="smokegrenade01_skin" />
+    <material name="smokegrenade01_md_set10_skin" />
+    <material name="smokegrenade02_skin" />
+    <material name="smokegrenade03_skin" />
+    <material name="smokegrenade04_skin" />
+    <material name="smokegrenade05_skin" />
+    <material name="smokegrenade06_skin" />
+    <material name="smokegrenade07_skin" />
+    <material name="smokegrenade08_skin" />
+    <material name="smokegrenade09_skin" />
+    <material name="smokegrenade10_skin" />
+    <material name="smokegrenade11_skin" />
+    <material name="smokegrenade12_skin" />
+    <material name="smokegrenade13_skin" />
+    <material name="smokegrenade14_skin" />
+    <material name="smokegrenade15_skin" />
+    <material name="smokegrenade16_skin" />
+    <material name="smokegrenade17_skin" />
+    <material name="smokegrenade18_skin" />
+    <material name="smokegrenade19_skin" />
+    <material name="smokegrenade20_skin" />
+    <material name="smokegrenade21_skin" />
+    <material name="smokegrenade22_skin" />
+    <material name="smokegrenade23_skin" />
+    <material name="smokegrenade24_skin" />
+    <material name="smokegrenade25_skin" />
+    <material name="smokegrenade26_skin" />
+    <material name="smokegrenade27_skin" />
+    <material name="smokegrenade28_skin" />
+    <material name="smokegrenade29_skin" />
+    <material name="smokegrenade30_skin" />
+    <material name="smokegrenade31_skin" />
+    <material name="smokegrenade32_skin" />
+    <material name="smokegrenade33_skin" />
+    <material name="smokegrenade34_skin" />
+    <material name="smokegrenade36_skin" />
+    <material name="smokegrenade38_bp05_skin" />
+    <material name="smokegrenade39_bp06_skin" />
+    <material name="smokegrenade40_bp07_skin" />
+    <material name="smokegrenade41_black02_skin" />
+    <material name="smokegrenade42_skin" />
+    <material name="smokegrenade43_gorgona01_skin" />
+    <material name="smokegrenade43_gorgona02_skin" />
+    <material name="smokegrenade45_samurai01_skin" />
+    <material name="smokegrenade46_brazil01_skin" />
+    <material name="smokegrenade47_swarm02_skin" />
+    <material name="smokegrenade48_heist03_skin" />
+    <material name="smokegrenade50_rating2303_skin" />
+    <material name="smokegrenade51_rating2306_skin" />
+    <material name="smokegrenade01_biohazard2403_skin" />
+    <material name="smokegrenade01_rating2403_skin" />
+    <material name="smokegrenade01_reptile2406_skin" />
+    <material name="smokegrenade01_rating2406_skin" />
+    <material name="smokegrenade01_mvt24esport01_skin" />
+    <material name="smokegrenade01_mvt24stval02_skin" />
+    <material name="smokegrenade01_mvt24wday03_skin" />
+    <material name="smokegrenade01_mvt24anniversary_skin" />
+    <material name="smokegrenade01_mvt24rday_skin" />
+    <material name="smokegrenade01_mvt24summer_skin" />
+    <material name="smokegrenade01_mvt24sunset07_skin" />
+    <material name="smokegrenade01_rating2409_skin" />
+    <material name="smokegrenade01_mvt24operator09_skin" />
+    <material name="smokegrenade01_rating2412_skin" />
+  </skins>
+  <settings>
+    <param name="rpm" value="70" />
+    <param name="ammo_amount" value="1" />
+    <param name="damage" value="0" />
+    <param name="damage_mul" value="1" />
+    <param name="melee_damage" value="65" />
+    <param name="melee_range" value="1.3" />
+    <param name="melee_radius" value="0.5" />
+    <param name="recoil_max" value="500" />
+    <param name="recoil_max_mul" value="1" />
+    <param name="recoil_att" value="70" />
+    <param name="recoil_att_mul" value="1" />
+    <param name="recoil_dec" value="250" />
+    <param name="recoil_dec_mul" value="1" />
+    <param name="recoil_rnd" value="0.3" />
+    <param name="spread_min" value="0.5" />
+    <param name="spread_max" value="2" />
+    <param name="spread_att" value="0.5" />
+    <param name="spread_dec" value="0.1" />
+    <param name="sway_dec" value="1" />
+    <param name="sway_dec_mul" value="1" />
+    <param name="sway_mul" value="1" />
+    <param name="sway_min_x" value="0" />
+    <param name="sway_min_y" value="0" />
+    <param name="melee_knock_back_chance" value="0" />
+    <param name="knock_back_chance" value="0" />
+    <param name="select_duration" value="200" />
+    <param name="deselect_duration" value="170" />
+    <param name="throw_duration" value="1000" />
+    <param name="melee_duration" value="380" />
+    <param name="melee_out_duration" value="400" />
+    <param name="toss_duration" value="280" />
+    <param name="activate_duration" value="700" />
+    <param name="throw_delay_duration" value="100" />
+    <param name="throw_fire_delay_duration" value="580" />
+    <param name="holster_in_duration" value="200" />
+  </settings>
+  <melee_params>
+    <param name="impulse" value="20" />
+    <param name="pierce" value="10" />
+    <param name="no_ray_test" value="1" />
+  </melee_params>
+  <drop_params model="Objects/Weapons/Grenades/sg01/sg01_tp.cgf" scale="2">
+    <item name="sg01_default" type="weapon" />
+    <item name="smokegrenade_default" type="ammo" amount="1" />
+  </drop_params>
+  <firemodes>
+    <firemode icon="FireModeSmokeGrenade" type="Throw" />
+  </firemodes>
+  <fireparams>
+    <fire>
+      <param name="extra_ammo" value="1" />
+      <param name="ammo_type" value="smokegrenade_default" />
+      <param name="bullet_chamber" value="0" />
+      <param name="helper_tp" value="weapon_term" />
+      <param name="helper_fp" value="weapon_term" />
+      <param name="nearmiss_signal" value="OnNearMiss" />
+      <param name="throwing" value="1" />
+    </fire>
+  </fireparams>
+  <sockets>
+    <socket name="perk_a" can_be_empty="1">
+      <support helper="perk_a" name="perk_a" />
+    </socket>
+    <socket name="perk_b" can_be_empty="1">
+      <support helper="perk_b" name="perk_b" />
+    </socket>
+  </sockets>
+</item>

@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" net_policy="weapon" name="kn55" priority="3" type="weapon" view_settings="objects/weapons/kn55/kn55.xml">
+  <skins>
+    <material name="default" />
+    <material name="mastery01" />
+    <material name="autumn2210" />
+    <material name="maori2211" />
+    <material name="jungle01" />
+    <material name="obsidian01" />
+    <material name="town01" />
+    <material name="dpass2212_01" />
+    <material name="pacifist2301" />
+    <material name="kraken2306_02">
+      <attach socket="kn55_kraken2306_02_sa01" />
+      <attach socket="kn55_kraken2306_02_sa02" />
+    </material>
+    <material name="bone2309_01" />
+    <material name="midgard2309" />
+    <material name="hiking2402" />
+    <material name="inx24olymp" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+	<class type="melee" name="Push_Daggers"/>
+  </classes>
+  <UI_stats>
+    <param name="name" value="@kn55_name" />
+    <param name="description" value="@kn55_desc" />
+    <param name="icon" value="kn55" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn55_lore_desc" />
+  </UI_stats>
+	<unique_properties>
+		<param name="animation" />
+	</unique_properties>
+  <content>
+    <item name="kn55" />
+  </content>
+  <skin_content>
+    <item name="kn55_mastery01skin_shop" />
+    <item name="kn55_autumn2210skin_shop" />
+    <item name="kn55_maori2211skin_shop" />
+    <item name="kn55_jungle01skin_shop" />
+    <item name="kn55_obsidian01skin_shop" />
+    <item name="kn55_town01skin_shop" />
+    <item name="kn55_dpass2212_01skin_shop" />
+    <item name="kn55_pacifist2301skin_shop" />
+    <item name="kn55_kraken2306_02skin_shop" />
+    <item name="kn55_bone2309_01skin_shop" />
+    <item name="kn55_midgard2309skin_shop" />
+    <item name="kn55_hiking2402skin_shop" />
+    <item name="kn55_inx24olympskin_shop" />
+  </skin_content>
+  <icons>
+    <combatlog melee="kn55_combatLog" />
+    <weaponpanel icon="kn55_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket can_be_empty="0" name="kn55_kraken2306_02_sa01">
+      <support helper="kn55_kraken2306_02_saslot01" name="kn55_kraken2306_02_sa01" />
+    </socket>
+    <socket can_be_empty="0" name="kn55_kraken2306_02_sa02">
+      <support helper="kn55_kraken2306_02_saslot02" name="kn55_kraken2306_02_sa02" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

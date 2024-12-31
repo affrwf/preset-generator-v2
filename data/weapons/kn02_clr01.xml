@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<item category="small" class="K01_Item" name="kn02_clr01" net_policy="weapon" priority="3" type="weapon" view_settings="objects/weapons/kn02/kn02.xml">
+  <tags>
+    <tag name="melee" />
+  </tags>
+  <skins>
+    <material name="clr01" />
+  </skins>
+  <mmo_stats>
+    <param name="item_category" value="Melee" />
+    <param name="shopcontent" value="1" />
+    <param name="classes" value="SRME" />
+  </mmo_stats>
+  <classes>
+    <class type="melee" name="Ultra_Marine"/>
+  </classes>
+
+  <UI_stats>
+    <param name="name" value="@kn02_clr01_name" />
+    <param name="description" value="@kn02_clr01_desc" />
+    <param name="icon" value="kn02_clr01" />
+    <param name="rarity" value="Legendary" />
+    <param name="lore_description" value="@kn02_lore_desc" />
+  </UI_stats>
+  <content>
+    <item name="kn02_clr01" />
+  </content>
+  <icons>
+    <combatlog melee="kn02_combatLog" />
+    <weaponpanel icon="kn02_combatLog" />
+  </icons>
+  <settings archetype="Items/Weapons/Archetypes/KN.xml" />
+  <firemodes>
+    <firemode icon="FireModeMelee" type="Melee" />
+  </firemodes>
+  <melee_params>
+    <param name="impulse" value="60" />
+  </melee_params>
+  <secondary_melee_params>
+    <param name="impulse" value="100" />
+    <param name="hit_type" value="melee_secondary" />
+  </secondary_melee_params>
+  <sockets>
+    <socket can_be_empty="0">
+      <support helper="top_small" name="top_small" />
+      <support helper="top_large" name="top_large" />
+    </socket>
+    <socket>
+      <support helper="bottom" name="bottom" />
+    </socket>
+  </sockets>
+</item>

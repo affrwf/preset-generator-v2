@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<item category="utility" class="K01_Item" name="mk01" priority="1" type="medkit" view_settings="objects/weapons/mk01/mk01.xml" net_policy="weapon">
+  <mmo_stats>
+    <param name="item_category" value="medkit" />
+    <param name="price" value="0" />
+    <param name="shopcontent" value="0" />
+    <param name="classes" value="M" />
+  </mmo_stats>
+  <UI_stats>
+    <param name="name" value="@mk01_default_name" />
+    <param name="description" value="@ui_weapons_mk01" />
+    <param name="icon" value="ccs_medkit" />
+    <param name="lore_description" value="@mk01_lore_desc" />
+    <param name="ui_category_override" value="device_class" />
+  </UI_stats>
+  <icons>
+    <combatlog melee="Melee" />
+    <weaponpanel icon="WP_Medkit_combatLog" />
+  </icons>
+  <skins>
+    <material name="default" />
+    <material name="mk01_xmas_skin" />
+    <material name="mk02_skin" />
+    <material name="mk03_skin" />
+    <material name="north2312" />
+    <material name="stval24" />
+    <material name="biohazard2403" />
+    <material name="reptile2406" />
+    <material name="summer24" />
+    <material name="coil2409" />
+    <material name="cat2501" />
+  </skins>
+  <skin_content>
+    <item name="default" />
+    <item name="mk01_xmas_skin" />
+    <item name="mk02_skin" />
+    <item name="mk03_skin" />
+    <item name="mk01_north2312_skin" />
+    <item name="mk01_stval24_skin" />
+    <item name="mk01_biohazard2403_skin" />
+    <item name="mk01_reptile2406_skin" />
+    <item name="mk01_summer24_skin" />
+    <item name="mk01_coil2409_skin" />
+    <Item name="mk01_underground2412_skin" />
+    <Item name="mk01_cat2501_skin" />
+  </skin_content>
+  <settings>
+    <param name="rpm" value="200" />
+    <param name="damage" value="0" />
+    <param name="damage_mul" value="1" />
+    <param name="recoil_max" value="0" />
+    <param name="recoil_max_mul" value="1" />
+    <param name="recoil_att" value="0" />
+    <param name="recoil_att_mul" value="1" />
+    <param name="recoil_dec" value="0" />
+    <param name="recoil_dec_mul" value="1" />
+    <param name="recoil_rnd" value="0" />
+    <param name="spread_min" value="0" />
+    <param name="spread_max" value="0" />
+    <param name="spread_att" value="0" />
+    <param name="spread_dec" value="0" />
+    <param name="sway_dec" value="0" />
+    <param name="sway_dec_mul" value="1" />
+    <param name="sway_mul" value="1" />
+    <param name="sway_min_x" value="0" />
+    <param name="sway_min_y" value="0" />
+    <param name="deselect_duration" value="200" />
+    <param name="select_duration" value="100" />
+    <param name="reload_duration" value="0" />
+    <param name="melee_duration" value="380" />
+    <param name="holster_in_duration" value="200" />
+    <param name="ai_sound_radius" value="0" />
+  </settings>
+  <clipmode manual_reload="0" />
+  <firemodes>
+    <firemode icon="FireModeMedkit" type="Restore" />
+  </firemodes>
+  <recharge_params>
+    <param name="recharge_duration" value="10" />
+    <param name="use_cost" value="5" />
+    <param name="type" value="heal" />
+  </recharge_params>
+  <interaction_params>
+    <param name="crosshair_id" value="14" />
+    <param name="crosshair_type" value="0" />
+    <param name="message" value="@interaction_heal" />
+  </interaction_params>
+  <restore_params>
+    <param name="start_restore_duration" value="0" />
+    <param name="restore_duration" value="3000" />
+    <param name="restore_amount" value="7" />
+    <param name="initial_distance" value="5" />
+    <param name="distance" value="8" />
+    <param name="restore_coop_duration" value="3000" />
+    <param name="hit_type" value="healing" />
+    <param name="class_restrictions" value="RMES" />
+  </restore_params>
+  <sockets>
+    <socket name="perk_a" can_be_empty="1">
+      <support helper="perk_a" name="perk_a" />
+    </socket>
+    <socket name="perk_b" can_be_empty="1">
+      <support helper="perk_b" name="perk_b" />
+    </socket>
+  </sockets>
+</item>

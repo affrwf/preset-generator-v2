@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<item category="special_device" class="K01_Item" name="dev01" priority="1" type="SD_medkit" view_settings="objects/weapons/mk01/mk01.xml" net_policy="weapon">
+    <mmo_stats>
+        <param name="item_category" value="SD_medkit"/>
+        <param name="price" value="0"/>
+        <param name="shopcontent" value="1"/>
+        <param name="classes" value="M"/>
+    </mmo_stats>
+    <UI_stats>
+        <param name="name" value=""/>
+        <param name="description" value=""/>
+        <param name="icon" value="ccs_medkit"/>
+    </UI_stats>
+    <icons>
+        <combatlog melee="Melee"/>
+        <weaponpanel icon="WP_Medkit_combatLog"/>
+    </icons>
+    <skins>
+        <material display_name="default" icon="default_icon" name="default"/>
+    </skins>
+    <settings>
+        <param name="rpm" value="200"/>
+        <param name="damage" value="0"/>
+        <param name="damage_mul" value="1"/>
+        <param name="recoil_max" value="0"/>
+        <param name="recoil_max_mul" value="1"/>
+        <param name="recoil_att" value="0"/>
+        <param name="recoil_att_mul" value="1"/>
+        <param name="recoil_dec" value="0"/>
+        <param name="recoil_dec_mul" value="1"/>
+        <param name="recoil_rnd" value="0"/>
+        <param name="spread_min" value="0"/>
+        <param name="spread_max" value="0"/>
+        <param name="spread_att" value="0"/>
+        <param name="spread_dec" value="0"/>
+        <param name="sway_dec" value="0"/>
+        <param name="sway_dec_mul" value="1"/>
+        <param name="sway_mul" value="1"/>
+        <param name="sway_min_x" value="0"/>
+        <param name="sway_min_y" value="0"/>
+        <param name="deselect_duration" value="200"/>
+        <param name="select_duration" value="100"/>
+        <param name="reload_duration" value="0"/>
+        <param name="melee_duration" value="380"/>
+        <param name="holster_in_duration" value="200"/>
+        <param name="ai_sound_radius" value="0"/>
+    </settings>
+    <clipmode manual_reload="0"/>
+    <firemodes>
+        <firemode icon="FireModeMedkit" type="Restore"/>
+    </firemodes>
+    <recharge_params>
+        <param name="recharge_duration" value="10"/>
+        <param name="use_cost" value="5"/>
+        <param name="type" value="heal"/>
+    </recharge_params>
+    <interaction_params>
+        <param name="crosshair_id" value="14"/>
+        <param name="crosshair_type" value="0"/>
+        <param name="message" value="@interaction_heal"/>
+    </interaction_params>
+    <restore_params>
+        <param name="start_restore_duration" value="0"/>
+        <param name="restore_duration" value="3000"/>
+        <param name="restore_amount" value="7"/>
+        <param name="initial_distance" value="5"/>
+        <param name="distance" value="8"/>
+        <param name="restore_coop_duration" value="3000"/>
+        <param name="hit_type" value="healing"/>
+        <param name="class_restrictions" value="RMES"/>
+    </restore_params>
+    <device_params>
+        <param name="device_cooldown_rounds" value="2" />
+        <param name="device_initial_cooldown_rounds" value="1" />
+        <param name="device_cooldown_seconds" value="30" />
+        <param name="device_initial_cooldown_seconds" value="20" />
+        <param name="device_initial_cooldown_pve" value="0" />
+    </device_params>
+</item>

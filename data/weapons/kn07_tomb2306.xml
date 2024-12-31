@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<item category="small" class="K01_Item" name="kn07_tomb2306" priority="3" type="weapon" view_settings="objects/weapons/kn07/kn07.xml" net_policy="weapon">
+	<skins>
+		<material name="tomb2306">
+			<attach socket="special_socket01" />
+		</material>
+	</skins>
+	<mmo_stats>
+		<param name="item_category" value="Melee" />
+		<param name="shopcontent" value="1" />
+		<param name="classes" value="SRME" />
+	</mmo_stats>
+  <classes>
+    <class type="melee" name="KABAR_Kukri"/>
+  </classes>
+
+	<UI_stats>
+		<param name="name" value="@kn07_tomb2306_name" />
+		<param name="description" value="@kn07_tomb2306_desc" />
+		<param name="icon" value="kn07_tomb2306" />
+		<param name="rarity" value="Legendary" />
+		<param name="lore_description" value="@kn07_lore_desc" />
+	</UI_stats>
+	<content>
+		<item name="kn07_tomb2306" />
+	</content>
+	<icons>
+		<combatlog melee="Kn07_combatLog" />
+		<weaponpanel icon="Kn07_combatLog" />
+	</icons>
+	<settings archetype="Items/Weapons/Archetypes/KN.xml" />
+	<firemodes>
+		<firemode icon="FireModeMelee" type="Melee" />
+	</firemodes>
+	<melee_params>
+		<param name="impulse" value="60" />
+	</melee_params>
+	<secondary_melee_params>
+		<param name="impulse" value="100" />
+		<param name="hit_type" value="melee_secondary" />
+	</secondary_melee_params>
+	<sockets>
+		<socket can_be_empty="0">
+			<support helper="top_small" name="top_small" />
+			<support helper="top_large" name="top_large" />
+		</socket>
+		<socket>
+			<support helper="bottom" name="bottom" />
+		</socket>
+		<socket can_be_empty="0" name="special_socket01">
+			<support helper="kn07_tomb2306_sa01" name="kn07_tomb2306_sa01" />
+		</socket>
+	</sockets>
+</item>
