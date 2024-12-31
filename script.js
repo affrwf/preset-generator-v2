@@ -2607,304 +2607,203 @@ const weaponFiles = [
     "tw01_teamgungame.xml"
     // Добавьте сюда остальные .xml, например: "ap01.xml", "ak02.xml", ...
   ];
-  
-  let itemsData = null;        // Данные из items.txt (XML)
-  let weaponsData = {};        // Объекты с данными по каждому оружию (парсим из *.xml)
-  
-  // Текущий выбор пользователя
-  let currentPreset = {
-    name: "Мой пресет",
-    primaryWeapon: { name: "", skin: "", attachments: [] },
-    secondaryWeapon: { name: "", skin: "", attachments: [] },
-    meleeWeapon: { name: "", skin: "", attachments: [] }
-  };
-  
-  // При загрузке страницы:
-  window.addEventListener("DOMContentLoaded", async () => {
-    // 1. Загрузить items.txt
-    await loadItemsData("./data/items.txt");
-  
-    // 2. Загрузить файлы оружия (weaponFiles) и распарсить их
-    for (let fileName of weaponFiles) {
-      await loadWeaponFile(`./data/weapons/${fileName}`);
+  // Глобальные хранилища
+let itemsData = null;        // XML из items.txt
+let weaponsData = {};        // { pt35: { name, ammoType, skins, attachments }, ... }
+
+// Дополнительно создадим:
+let localizedToInternal = {}; // { "Taurus Judge": "pt35", "AK-47": "ak01", ... }
+let internalToLocalized = {}; // { "pt35": "Taurus Judge", ... }
+
+// Текущий выбор пользователя
+let currentPreset = {
+  name: "Мой пресет",
+  primaryWeapon: { name: "", skin: "", attachments: [] },
+  secondaryWeapon: { name: "", skin: "", attachments: [] },
+  meleeWeapon: { name: "", skin: "", attachments: [] }
+};
+
+window.addEventListener("DOMContentLoaded", async () => {
+  await loadItemsData("./data/items.txt");
+
+  // Загружаем все weaponFiles
+  for (let fileName of weaponFiles) {
+    await loadWeaponFile(`./data/weapons/${fileName}`);
+  }
+
+  // После загрузки создадим datalist-ы (чтобы был autocomplete)
+  fillWeaponDatalists();
+
+  // Вешаем обработчики
+  setupEventHandlers();
+
+  // Обновляем вывод пресета
+  updatePresetOutput();
+});
+
+async function loadItemsData(url) {
+  // ... как в предыдущем примере ...
+}
+
+/** Загружаем xml-описание оружия и сохраняем */
+async function loadWeaponFile(url) {
+  // ... как в предыдущем примере, парсим ...
+  // Пусть получилось weaponName = "pt35"
+
+  // В конце, кроме сохранения в weaponsData, ещё попытаемся найти локализованное название:
+  // Например, по itemsData
+  const localizedName = getLocalizedItemName(weaponName) || weaponName;
+  internalToLocalized[weaponName] = localizedName;
+  localizedToInternal[localizedName] = weaponName;
+}
+
+/** После того, как у нас есть internalToLocalized,
+ *   заполняем <datalist> для Primary/Secondary/Melee 
+ */
+function fillWeaponDatalists() {
+  const primaryList = document.getElementById("primaryWeaponList");
+  const secondaryList = document.getElementById("secondaryWeaponList");
+  const meleeList = document.getElementById("meleeWeaponList");
+
+  Object.keys(internalToLocalized).forEach(internalName => {
+    const locName = internalToLocalized[internalName];
+
+    // Создаём <option value="Taurus Judge"> (пример)
+    let opt1 = document.createElement("option");
+    opt1.value = locName; 
+    primaryList.appendChild(opt1);
+
+    let opt2 = document.createElement("option");
+    opt2.value = locName; 
+    secondaryList.appendChild(opt2);
+
+    let opt3 = document.createElement("option");
+    opt3.value = locName; 
+    meleeList.appendChild(opt3);
+  });
+}
+
+function getLocalizedItemName(internalName) {
+  if (!itemsData) return null;
+  let itemNode = itemsData.querySelector(`Item[name='${internalName}']`);
+  if (itemNode && itemNode.hasAttribute("item_name")) {
+    return itemNode.getAttribute("item_name");
+  }
+  return null;
+}
+
+// Та же логика
+function getSkinLocalizedName(weaponKey, materialName) { /* ... */ }
+function getAttachmentLocalizedName(attachmentName) { /* ... */ }
+
+/** При вводе в input (Primary/Secondary/Melee) надо:
+ *  1) считать введённую строку
+ *  2) найти, есть ли в localizedToInternal такой ключ
+ *  3) если нашли — handleWeaponChange(его, "primary"/"secondary"/"melee")
+ *  4) если нет, обнулить
+ */
+function setupEventHandlers() {
+  const primaryInput = document.getElementById("primaryWeaponInput");
+  primaryInput.addEventListener("input", () => {
+    const typed = primaryInput.value.trim();
+    if (localizedToInternal[typed]) {
+      handleWeaponChange(localizedToInternal[typed], "primary");
+    } else {
+      // Нет совпадения? Считаем что слот не выбран
+      handleWeaponChange("", "primary");
     }
-  
-    // 3. Заполнить <select> списками оружия (из itemsData или weaponFiles)
-    fillWeaponSelects();
-  
-    // 4. Подключаем обработчики событий
-    setupEventHandlers();
-  
-    // Обновим вывод пресета
+  });
+
+  const secondaryInput = document.getElementById("secondaryWeaponInput");
+  secondaryInput.addEventListener("input", () => {
+    const typed = secondaryInput.value.trim();
+    if (localizedToInternal[typed]) {
+      handleWeaponChange(localizedToInternal[typed], "secondary");
+    } else {
+      handleWeaponChange("", "secondary");
+    }
+  });
+
+  const meleeInput = document.getElementById("meleeWeaponInput");
+  meleeInput.addEventListener("input", () => {
+    const typed = meleeInput.value.trim();
+    if (localizedToInternal[typed]) {
+      handleWeaponChange(localizedToInternal[typed], "melee");
+    } else {
+      handleWeaponChange("", "melee");
+    }
+  });
+
+  // Переименование пресета
+  const presetNameInput = document.getElementById("presetName");
+  presetNameInput.addEventListener("input", (e) => {
+    currentPreset.name = e.target.value;
     updatePresetOutput();
   });
-  
-  /**
-   * Загружает и парсит items.txt (XML).
-   */
-  async function loadItemsData(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.error("Не удалось загрузить items.txt:", response.statusText);
-        return;
-      }
-      const textData = await response.text();
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(textData, "text/xml");
-      itemsData = xmlDoc;
-    } catch (error) {
-      console.error("Ошибка загрузки items.txt:", error);
-    }
-  }
-  
-  /**
-   * Загружает и парсит файл оружия (XML), сохраняет в weaponsData[weaponName].
-   */
-  async function loadWeaponFile(url) {
-    try {
-      const response = await fetch(url);
-      if (!response.ok) {
-        console.error("Не удалось загрузить:", url, response.statusText);
-        return;
-      }
-      const textData = await response.text();
-      const parser = new DOMParser();
-      const xmlDoc = parser.parseFromString(textData, "text/xml");
-      
-      // Предположим, что тэг <item ... name="pt35" ... >
-      const itemNode = xmlDoc.querySelector("item");
-      if (!itemNode) return;
-      const weaponName = itemNode.getAttribute("name") || "unknown";
-  
-      // Получаем ammo_type (внутри <fireparams> -> <fire> -> param name="ammo_type")
-      // или напрямую: <item ... net_policy="weapon" ... >
-      let ammoType = "";
-      const fireParamNode = xmlDoc.querySelector("fireparams fire param[name='ammo_type']");
-      if (fireParamNode) {
-        ammoType = fireParamNode.getAttribute("value");
-      }
-  
-      // Собираем список скинов <skins> -> <material name="...">
-      let skins = [];
-      const skinNodes = itemNode.querySelectorAll("skins material");
-      skinNodes.forEach(skin => {
-        skins.push(skin.getAttribute("name"));
-      });
-  
-      // Модули: <sockets> -> <socket> -> <support name="..." />
-      let attachments = [];
-      const supportNodes = itemNode.querySelectorAll("sockets socket support");
-      supportNodes.forEach(support => {
-        attachments.push(support.getAttribute("name"));
-      });
-  
-      // Сохраняем результат
-      weaponsData[weaponName] = {
-        name: weaponName,
-        ammoType: ammoType,
-        skins,
-        attachments
-      };
-  
-    } catch (error) {
-      console.error("Ошибка загрузки файла оружия:", url, error);
-    }
-  }
-  
-  /**
-   * Заполняет выпадающие списки (Primary/Secondary/Melee) названиями из weaponsData.
-   * Или можно брать "подмножества" (например, melee = ножи) — но это зависит от вашей структуры.
-   */
-  function fillWeaponSelects() {
-    const primarySelect = document.getElementById("primaryWeaponSelect");
-    const secondarySelect = document.getElementById("secondaryWeaponSelect");
-    const meleeSelect = document.getElementById("meleeWeaponSelect");
-  
-    // Для простоты — заполним все одинаково. В реальности у вас может быть категоризация.
-    Object.keys(weaponsData).forEach(weaponKey => {
-      const localName = getLocalizedItemName(weaponKey) || weaponKey;
-  
-      // Основное
-      let optPrimary = document.createElement("option");
-      optPrimary.value = weaponKey;
-      optPrimary.textContent = localName;
-      primarySelect.appendChild(optPrimary);
-  
-      // Доп
-      let optSecondary = document.createElement("option");
-      optSecondary.value = weaponKey;
-      optSecondary.textContent = localName;
-      secondarySelect.appendChild(optSecondary);
-  
-      // Нож
-      let optMelee = document.createElement("option");
-      optMelee.value = weaponKey;
-      optMelee.textContent = localName;
-      meleeSelect.appendChild(optMelee);
-    });
-  }
-  
-  /**
-   * Получить локализованное название предмета по name="pt35" из items.txt
-   */
-  function getLocalizedItemName(internalName) {
-    if (!itemsData) return null;
-    let itemNode = itemsData.querySelector(`Item[name='${internalName}']`);
-    if (itemNode && itemNode.hasAttribute("item_name")) {
-      return itemNode.getAttribute("item_name");
-    }
-    return null;
-  }
-  
-  /**
-   * При выборе оружия — нужно показать доступные скины и модули (attachments).
-   * @param {string} weaponKey 
-   * @param {string} section (primary, secondary, melee)
-   */
-  function handleWeaponChange(weaponKey, section) {
-    // Сохраняем текущее значение
-    currentPreset[section + "Weapon"].name = weaponKey;
-    currentPreset[section + "Weapon"].skin = "";
-    currentPreset[section + "Weapon"].attachments = [];
-  
-    // Очищаем контейнеры скинов/модулей
-    const skinsContainer = document.getElementById(section + "WeaponSkins");
-    const attachmentsContainer = document.getElementById(section + "WeaponAttachments");
-    skinsContainer.innerHTML = "";
-    attachmentsContainer.innerHTML = "";
-  
-    if (!weaponKey || !weaponsData[weaponKey]) {
-      updatePresetOutput();
-      return;
-    }
-  
-    const wData = weaponsData[weaponKey];
-    // Выводим кнопки выбора скинов
-    wData.skins.forEach(skinName => {
-      const btn = document.createElement("button");
-      btn.textContent = getSkinLocalizedName(weaponKey, skinName) || skinName;
-      btn.addEventListener("click", () => {
-        currentPreset[section + "Weapon"].skin = skinName; 
-        updatePresetOutput();
-      });
-      skinsContainer.appendChild(btn);
-    });
-  
-    // Выводим кнопки выбора модулей
-    wData.attachments.forEach(attName => {
-      const btn = document.createElement("button");
-      btn.textContent = getAttachmentLocalizedName(attName) || attName;
-      btn.addEventListener("click", () => {
-        toggleAttachment(section, attName);
-      });
-      attachmentsContainer.appendChild(btn);
-    });
-  
+
+  // Кнопка "Сохранить" в localStorage
+  document.getElementById("savePresetBtn").addEventListener("click", () => {
+    savePresetToLocalStorage();
+  });
+  // Кнопка "Скопировать"
+  document.getElementById("copyPresetBtn").addEventListener("click", () => {
+    copyPresetToClipboard();
+  });
+}
+
+/** При выборе / смене оружия — перерисовываем скины и модули */
+function handleWeaponChange(weaponKey, slot) {
+  currentPreset[slot + "Weapon"].name = weaponKey;
+  currentPreset[slot + "Weapon"].skin = "";
+  currentPreset[slot + "Weapon"].attachments = [];
+
+  const skinsContainer = document.getElementById(slot + "WeaponSkins");
+  const attachmentsContainer = document.getElementById(slot + "WeaponAttachments");
+  skinsContainer.innerHTML = "";
+  attachmentsContainer.innerHTML = "";
+
+  if (!weaponKey || !weaponsData[weaponKey]) {
     updatePresetOutput();
+    return;
   }
-  
-  /**
-   * В items.txt может быть описание скинов вида:
-   * <skins>
-   *   <skin name="pt35_bp05skin_shop" skin_name="Камуфляж «Синдикат»" material="bp05" />
-   * </skins>
-   * 
-   * Но в XML оружия у нас лишь material="bp05".
-   * Нам надо найти тот skin, у которого material="bp05".
-   */
-  function getSkinLocalizedName(weaponKey, materialName) {
-    if (!itemsData) return null;
-    let itemNode = itemsData.querySelector(`Item[name='${weaponKey}']`);
-    if (!itemNode) return null;
-    let skins = itemNode.querySelectorAll("skins skin");
-    for (let s of skins) {
-      if (s.getAttribute("material") === materialName) {
-        let localized = s.getAttribute("skin_name");
-        if (localized) return localized;
-      }
-    }
-    return null;
-  }
-  
-  /**
-   * В items.txt может быть описание модуля:
-   * <attachment name="pt35_rds_d" attachment_name="Test Level" socket="scope" />
-   * 
-   * Мы хотим вывести attachment_name, если он есть.
-   */
-  function getAttachmentLocalizedName(attachmentName) {
-    if (!itemsData) return null;
-    let attNode = itemsData.querySelector(`attachment[name='${attachmentName}']`);
-    if (attNode && attNode.hasAttribute("attachment_name")) {
-      return attNode.getAttribute("attachment_name");
-    }
-    return null;
-  }
-  
-  /**
-   * Пользователь кликает по модулю (кнопке).
-   * Если модуль уже выбрали — убираем его, если не выбрали — добавляем.
-   */
-  function toggleAttachment(section, attName) {
-    let arr = currentPreset[section + "Weapon"].attachments;
-    if (arr.includes(attName)) {
-      // Удаляем
-      currentPreset[section + "Weapon"].attachments = arr.filter(a => a !== attName);
-    } else {
-      // Добавляем
-      arr.push(attName);
-    }
-    updatePresetOutput();
-  }
-  
-  /**
-   * Подключаем все обработчики (выбор оружия, кнопки "Сохранить", "Скопировать" и т.д.)
-   */
-  function setupEventHandlers() {
-    const primarySelect = document.getElementById("primaryWeaponSelect");
-    const secondarySelect = document.getElementById("secondaryWeaponSelect");
-    const meleeSelect = document.getElementById("meleeWeaponSelect");
-  
-    primarySelect.addEventListener("change", (e) => {
-      handleWeaponChange(e.target.value, "primary");
-    });
-    secondarySelect.addEventListener("change", (e) => {
-      handleWeaponChange(e.target.value, "secondary");
-    });
-    meleeSelect.addEventListener("change", (e) => {
-      handleWeaponChange(e.target.value, "melee");
-    });
-  
-    // Переименование пресета
-    const presetNameInput = document.getElementById("presetName");
-    presetNameInput.addEventListener("input", (e) => {
-      currentPreset.name = e.target.value;
+
+  const wData = weaponsData[weaponKey];
+  // Вывести скины
+  wData.skins.forEach(skinName => {
+    const btn = document.createElement("button");
+    btn.textContent = getSkinLocalizedName(weaponKey, skinName) || skinName;
+    btn.addEventListener("click", () => {
+      currentPreset[slot + "Weapon"].skin = skinName; 
       updatePresetOutput();
     });
-  
-    // Кнопка "Сохранить пресет" (в localStorage)
-    document.getElementById("savePresetBtn").addEventListener("click", () => {
-      savePresetToLocalStorage();
+    skinsContainer.appendChild(btn);
+  });
+
+  // Вывести модули
+  wData.attachments.forEach(attName => {
+    const btn = document.createElement("button");
+    btn.textContent = getAttachmentLocalizedName(attName) || attName;
+    btn.addEventListener("click", () => {
+      toggleAttachment(slot, attName);
     });
-  
-    // Кнопка "Скопировать пресет"
-    document.getElementById("copyPresetBtn").addEventListener("click", () => {
-      copyPresetToClipboard();
-    });
+    attachmentsContainer.appendChild(btn);
+  });
+
+  updatePresetOutput();
+}
+
+function toggleAttachment(slot, attName) {
+  let arr = currentPreset[slot + "Weapon"].attachments;
+  if (arr.includes(attName)) {
+    // Удаляем
+    currentPreset[slot + "Weapon"].attachments = arr.filter(a => a !== attName);
+  } else {
+    // Добавляем
+    arr.push(attName);
   }
-  
-  /**
-   * Генерируем Lua-таблицу на основе currentPreset.
-   * Пример:
-   * local inventory = {
-   *   armor = {...},
-   *   items = {...},
-   *   attachments = {...},
-   *   ammo = {...},
-   * }
-   * return inventory
-   */
+  updatePresetOutput();
+}
+
   function generateLuaPreset() {
     // В вашем примере armor жёстко задан, можете тоже делать «выбор брони» — пока статично:
     const armorLua = `
@@ -2997,9 +2896,6 @@ const weaponFiles = [
     document.getElementById("presetOutput").textContent = generateLuaPreset();
   }
   
-  /**
-   * Сохраняем в localStorage под именем пресета
-   */
   function savePresetToLocalStorage() {
     const key = "warface-preset-" + (currentPreset.name || "default");
     const dataToSave = {
@@ -3010,9 +2906,6 @@ const weaponFiles = [
     alert(`Пресет "${currentPreset.name}" сохранён в localStorage!`);
   }
   
-  /**
-   * Копирует Lua-пресет в буфер обмена
-   */
   function copyPresetToClipboard() {
     const luaCode = generateLuaPreset();
     navigator.clipboard.writeText(luaCode)
@@ -3023,4 +2916,3 @@ const weaponFiles = [
         console.error("Ошибка копирования:", err);
       });
   }
-  
