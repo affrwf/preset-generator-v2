@@ -1,80 +1,75 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Warface Preset Generator</title>
-  <link rel="stylesheet" href="./style.css" />
+  <!-- МЕТА-ТЕГИ, ИКОНКИ, ШРИФТЫ -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
   <header>
     <h1>Warface Preset Generator</h1>
   </header>
 
   <main>
-    <!-- Кнопки управления пресетом -->
-    <section class="preset-actions">
+    <!-- Блок переименования пресета -->
+    <section class="preset-name-section">
       <label for="presetName">Название пресета:</label>
-      <input type="text" id="presetName" value="Мой пресет">
+      <input type="text" id="presetName" value="Мой пресет" />
+      <button id="renamePresetBtn">Переименовать пресет</button>
+    </section>
+
+    <!-- Блок выбора оружия -->
+    <section class="weapon-section">
+      <h2>Основное оружие</h2>
+      <select id="primaryWeaponSelect">
+        <!-- Заполняется динамически на основе XML-файлов -->
+      </select>
+
+      <h2>Дополнительное оружие</h2>
+      <select id="secondaryWeaponSelect">
+        <!-- Заполняется динамически -->
+      </select>
+
+      <h2>Нож</h2>
+      <select id="meleeWeaponSelect">
+        <!-- Заполняется динамически -->
+      </select>
+    </section>
+
+    <!-- Блок выбора камуфляжей (в зависимости от выбранного оружия) -->
+    <section class="skins-section">
+      <h2>Выбор камуфляжей</h2>
+      <div id="skinsContainer">
+        <!-- Чекбоксы (или радиокнопки) со скинами конкретно для выбранного оружия -->
+      </div>
+    </section>
+
+    <!-- Блок выбора модулей / аттачей -->
+    <section class="attachments-section">
+      <h2>Модули / Моды</h2>
+      <div id="attachmentsContainer">
+        <!-- Чекбоксы с названиями модулей (parsing sockets -> supports) -->
+      </div>
+    </section>
+
+    <!-- Блок с кнопками "Сохранить" и "Скопировать" -->
+    <section class="actions-section">
       <button id="savePresetBtn">Сохранить пресет</button>
       <button id="copyPresetBtn">Скопировать пресет</button>
     </section>
 
-    <!-- Основное оружие -->
-    <section class="section-block">
-      <h2>Основное оружие</h2>
-      <select id="primaryWeaponSelect">
-        <option value="">Не выбрано</option>
-      </select>
-
-      <h3>Доступные скины</h3>
-      <div id="primaryWeaponSkins" class="skins-list"></div>
-
-      <h3>Доступные модули</h3>
-      <div id="primaryWeaponAttachments" class="attachments-list"></div>
-    </section>
-
-    <!-- Дополнительное оружие -->
-    <section class="section-block">
-      <h2>Дополнительное оружие</h2>
-      <select id="secondaryWeaponSelect">
-        <option value="">Не выбрано</option>
-      </select>
-
-      <h3>Доступные скины</h3>
-      <div id="secondaryWeaponSkins" class="skins-list"></div>
-
-      <h3>Доступные модули</h3>
-      <div id="secondaryWeaponAttachments" class="attachments-list"></div>
-    </section>
-
-    <!-- Нож (или ближний бой) -->
-    <section class="section-block">
-      <h2>Нож / Ближний бой</h2>
-      <select id="meleeWeaponSelect">
-        <option value="">Не выбрано</option>
-      </select>
-
-      <h3>Доступные скины</h3>
-      <div id="meleeWeaponSkins" class="skins-list"></div>
-
-      <h3>Доступные модули</h3>
-      <div id="meleeWeaponAttachments" class="attachments-list"></div>
-      <!-- Обычно модули для ножа не нужны, но пусть будет на будущее -->
-    </section>
-
-    <!-- Здесь будет итоговый код пресета -->
-    <section class="section-block">
-      <h2>Результат (Lua-таблица)</h2>
-      <pre id="presetOutput"></pre>
+    <!-- Итоговое Lua -->
+    <section class="result-section">
+      <h2>Сгенерированный код</h2>
+      <textarea id="resultArea" rows="15" readonly></textarea>
     </section>
   </main>
 
   <footer>
     <p>© 2024 Warface Preset Generator</p>
   </footer>
-</div>
 
-<script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
