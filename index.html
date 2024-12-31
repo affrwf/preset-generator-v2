@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Warface Preset Generator</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Warface Preset Generator</h1>
+  </header>
+
+  <main>
+    <!-- Кнопки управления пресетом -->
+    <section class="preset-actions">
+      <label for="presetName">Название пресета:</label>
+      <input type="text" id="presetName" value="Мой пресет">
+      <button id="savePresetBtn">Сохранить пресет</button>
+      <button id="copyPresetBtn">Скопировать пресет</button>
+    </section>
+
+    <!-- Основное оружие -->
+    <section class="section-block">
+      <h2>Основное оружие</h2>
+      <select id="primaryWeaponSelect">
+        <option value="">Не выбрано</option>
+      </select>
+
+      <h3>Доступные скины</h3>
+      <div id="primaryWeaponSkins" class="skins-list"></div>
+
+      <h3>Доступные модули</h3>
+      <div id="primaryWeaponAttachments" class="attachments-list"></div>
+    </section>
+
+    <!-- Дополнительное оружие -->
+    <section class="section-block">
+      <h2>Дополнительное оружие</h2>
+      <select id="secondaryWeaponSelect">
+        <option value="">Не выбрано</option>
+      </select>
+
+      <h3>Доступные скины</h3>
+      <div id="secondaryWeaponSkins" class="skins-list"></div>
+
+      <h3>Доступные модули</h3>
+      <div id="secondaryWeaponAttachments" class="attachments-list"></div>
+    </section>
+
+    <!-- Нож (или ближний бой) -->
+    <section class="section-block">
+      <h2>Нож / Ближний бой</h2>
+      <select id="meleeWeaponSelect">
+        <option value="">Не выбрано</option>
+      </select>
+
+      <h3>Доступные скины</h3>
+      <div id="meleeWeaponSkins" class="skins-list"></div>
+
+      <h3>Доступные модули</h3>
+      <div id="meleeWeaponAttachments" class="attachments-list"></div>
+      <!-- Обычно модули для ножа не нужны, но пусть будет на будущее -->
+    </section>
+
+    <!-- Здесь будет итоговый код пресета -->
+    <section class="section-block">
+      <h2>Результат (Lua-таблица)</h2>
+      <pre id="presetOutput"></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2024 Warface Preset Generator</p>
+  </footer>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
